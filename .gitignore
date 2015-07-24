@@ -1,7 +1,10 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Created by .gitignore support plugin (hsz.mobi)
 .edea
 =======
+=======
+>>>>>>> 4c32d00e679e4ff0f4696199809eef95637596ea
 # Logs
 logs
 *.log
@@ -29,4 +32,7 @@ build/Release
 # Dependency directory
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
+<<<<<<< HEAD
 >>>>>>> 68d548d9c8d23a9995c5334f6e2ac5a81c0b206b
+=======
+>>>>>>> 4c32d00e679e4ff0f4696199809eef95637596ea
