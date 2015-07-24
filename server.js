@@ -58,7 +58,7 @@ app.use( function( req, res, next ) {
 // Send Email with New Password:
 app.post('/forgot', function (req, res, next) {
     var mail        = req.body.mail,
-        newPass     = Math.floor( Math.random() * ( 9999998 - 1000001 ) + 1000001 );
+        newPass     = '12345689';
 
     app.mailer.send('email', {
         to: mail,                                   // REQUIRED. This can be a comma delimited string just like a normal email to field.

@@ -26,14 +26,13 @@ function Controllers() {
 //----------------------------------------------------------------------------------------------------------------------
     // Render Template:
     function getTemplate( req, res ) {
-        connectionQuery_( res, 'SELECT SiteName, SiteCopyright FROM general', renderFile );
+        connectionQuery_( res, 'SELECT SiteName FROM general', renderFile );
 
         function renderFile( res, rows ) {
             var row = rows[0];
 
-            res.render( 'index', {/*
-                SiteName:  row.SiteName,
-                Author:    row.SiteCopyright*/
+            res.render( 'index', {
+                hello:  row.SiteName
             } );
         }
     }
