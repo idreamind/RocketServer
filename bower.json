@@ -1,0 +1,26 @@
+{
+  "name": "RocketServer",
+  "version": "0.5.0",
+  "authors": [
+    "idreamind <kos.voit@gmail.com>"
+  ],
+  "description": "AngulaJS, NodeJS, HTML5",
+  "main": "server.js",
+  "moduleType": [
+    "es6"
+  ],
+  "keywords": [
+    "AngularJS",
+    "NodeJS",
+    "HTML5"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
