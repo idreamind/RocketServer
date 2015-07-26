@@ -15,25 +15,21 @@ var express = require('express'),
     Simple  = require('./server/simple'),
     simple  = new Simple(),
     Helper  = require('./server/helpers'),
-    helper  = new Helper();
+    helper  = new Helper(),
+    rocket  = require('./server/config');
 
 mailer.extend( app, {
-    from: 'no-reply@example.com',
-    host: 'smtp.gmail.com', // hostname
+    from: rocket.mail.from,
+    host: rocket.mail.host, // hostname
     secureConnection: true, // use SSL
-    port: 465, // port for secure SMTP
-    transportMethod: 'SMTP', // default is SMTP. Accepts anything that nodemailer accepts
-    auth: {
-        user: 'guestbook.noreply@gmail.com',
-        pass: 'NJM52691612918g$'
-    }
+    port: rocket.mail.port, // port for secure SMTP
+    transportMethod: rocket.method, // default is SMTP. Accepts anything that nodemailer accepts
+    auth: rocket.mail.auth
 } );
-
-var portName = 3000;
 
 var bodyParser = require('body-parser');
 
-app.use( multer({ dest: './server/views/files'}) );
+app.use( multer({ dest: rocket.files }) );
 app.use( bodyParser.json() );        // to support JSON-encoded bodies
 app.use( bodyParser.urlencoded({     // to support URL-encoded bodies
     extended: true
@@ -42,7 +38,7 @@ app.use( bodyParser.urlencoded({     // to support URL-encoded bodies
 // Set Views location:
 app.engine( 'html', simple.render );
 app.set('view engine', 'html');
-app.set('views', __dirname + '/server/views');
+app.set('views', __dirname + rocket.views);
 
 // Log all connections:
 app.use( function(req, res, next ) {
@@ -79,13 +75,13 @@ app.post('/forgot', function (req, res, next) {
 
 // Send Static Content:
 app.use( express.static(__dirname) );
-app.use( express.static(__dirname + '/server/views') );
+app.use( express.static(__dirname + rocket.views) );
 
 // Create HTTP-server:
-http.createServer( app ).listen( portName, startListen );
+http.createServer( app ).listen( rocket.port, startListen );
 
 // On server Start:
 function startListen() {
-    console.log(' Server Run at ' + helper.getCurrentTime() + ' on port ' + portName );
+    console.log(' Server Run at ' + helper.getCurrentTime() + ' on port ' + rocket.port );
 }
 
