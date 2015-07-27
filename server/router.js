@@ -28,4 +28,4 @@ function Router() {
     return route;
 }
 
-module.exports = Router;
+module.exports = new Router();

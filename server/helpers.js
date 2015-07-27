@@ -96,4 +96,4 @@ function Helpers() {
     return help;
 }
 
-module.exports = Helpers;
+module.exports = new Helpers();

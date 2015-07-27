@@ -8,14 +8,10 @@ var express = require('express'),
     multer  = require('multer'),
     mailer  = require('express-mailer'),
     app     = express(),
-    Logger  = require('./server/logger'),
-    logger  = new Logger(),
-    Router  = require('./server/router'),
-    router  = new Router(),
-    Simple  = require('./server/simple'),
-    simple  = new Simple(),
-    Helper  = require('./server/helpers'),
-    helper  = new Helper(),
+    logger  = require('./server/logger'),
+    router  = require('./server/router'),
+    simple  = require('./server/simple'),
+    helper  = require('./server/helpers'),
     rocket  = require('./server/config');
 
 mailer.extend( app, {

@@ -65,4 +65,4 @@ function Simple() {
     return simple;
 }
 
-module.exports = Simple;
+module.exports = new Simple();

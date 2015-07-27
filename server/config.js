@@ -3,7 +3,9 @@
  * Global Config
  */
 
-Rocket = {
+'use strict';
+
+var Rocket = {
     port:   3000,
     views:  '/server/views',
     files:  './server/views/files',

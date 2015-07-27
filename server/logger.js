@@ -3,8 +3,7 @@
  */
 'use strict';
 
-var Helper  = require('./helpers'),
-    helper  = new Helper(),
+var helper  = require('./helpers'),
     ip      = require('request-ip');
 
 function Logger() {
@@ -63,4 +62,4 @@ function Logger() {
     return log;
 }
 
-module.exports = Logger;
+module.exports = new Logger();
