@@ -18,6 +18,13 @@ var Rocket = {
             user: 'guestbook.noreply@gmail.com',
             pass: 'NJM52691612918g$'
         }
+    },
+    mysql: {
+        limit:      100,
+        host:       'localhost',
+        user:       'root',
+        password:   '1234',
+        database:   'tubegallery'
     }
 };
 

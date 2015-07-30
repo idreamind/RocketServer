@@ -5,11 +5,9 @@
 
 function Router() {
     var route  = this,
-        Match  = require('./match'),
-        match  = new Match(),
+        match  = require('./match'),
         routes = require('./routes'),
-        Controllers = require('./controllers'),
-        ctrl        = new Controllers();
+        ctrl   = require('./controllers');
 
     match.setRoutes( routes );
 

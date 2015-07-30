@@ -31,12 +31,12 @@ function Match() {
     // Set new Handlers Array:
     function setRoutes( handlers ) {
         if( typeof handlers === "object" ) {
-            store_    = Object.create( routes_);
+            store_  = Object.create( routes_);
             routes_ = Object.create( handlers );
         }
     }
 
-    // Set get Handlers Array:
+    // Get Handlers Array:
     function getRoutes() {
         return routes_;
     }
@@ -60,4 +60,4 @@ function Match() {
     return match;
 }
 
-module.exports = Match;
+module.exports = new Match();

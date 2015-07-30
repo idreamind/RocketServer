@@ -4,14 +4,15 @@
 'use strict';
 
 var mysql   = require('mysql'),
+    rocket  = require('./config'),
     fs      = require('fs'),
     Helper  = require('./helpers'),
     pool    = mysql.createPool({
-        connectionLimit : 100,
-        host     : 'localhost',
-        user     : 'root',
-        password : '1234',
-        database : 'tubegallery'
+        connectionLimit : rocket.mysql.limit,
+        host     : rocket.mysql.host,
+        user     : rocket.mysql.user,
+        password : rocket.mysql.password,
+        database : rocket.mysql.database
     }),
     isProduction = true;
 
@@ -152,4 +153,4 @@ function Controllers() {
 }
 
 //----------------------------------------------------------------------------------------------------------------------
-module.exports = Controllers;
+module.exports = new Controllers();
